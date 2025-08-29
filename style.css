@@ -1,0 +1,55 @@
+.maincontainer {
+    width: 100vh;
+    background-color: aquamarine;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head {
+    color: orangered;
+    text-align: center;
+    padding-top: 50px;
+}
+.add-button {
+    color: aqua;
+    background-color: teal;
+    border: none;
+}
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 17px 8px 12px 20px;
+    user-select: none;
+    cursor: pointer;
+    width: 145px;
+    position: relative;
+    display: flex;
+}
+ul li::before {
+    content : '';
+    position: absolute;
+    background-image: url(/unchecked\ circle.jpeg);
+    height: 15px;
+    width: 15px;
+    background-position: center;
+    background-size: cover;
+    left: -3px;
+    top: 20px;
+    background-color: brown;
+}
+.checked {
+    text-decoration: line-through;
+}
+ul li::before.checked {
+    background-image: url(/unchecked\ circle.jpeg);
+
+
+}
+.style {
+    position: absolute;
+    right: 0;
+}
+.remove {
+    display: none;
+}
