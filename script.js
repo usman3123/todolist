@@ -16,13 +16,23 @@ function addtext() {
         listcontainer.appendChild(li);
     }
     field.value = "";
+    savedata();
 }
 
 listcontainer.addEventListener("click", (e) => {
     if (e.target.closest("span")) {
         e.target.closest("li").remove();
+        savedata();
     } 
     else if (e.target.closest("li")) {
         e.target.closest("li").classList.toggle("checked");
+        savedata();
     }
 });
+function savedata(){
+    localStorage.setItem("data",listcontainer.innerHTML)
+}
+function showtask() {
+    listcontainer.innerHTML = localStorage.getItem("data")
+}
+showtask();
